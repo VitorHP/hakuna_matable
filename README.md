@@ -1,4 +1,5 @@
 [![Code Climate](https://codeclimate.com/github/VitorHP/hakuna_matable.png)](https://codeclimate.com/github/VitorHP/hakuna_matable)
+[![Build Status](https://travis-ci.org/VitorHP/hakuna_matable.png?branch=master)](https://travis-ci.org/VitorHP/hakuna_matable)
 
 # Hakuna Matable
 
