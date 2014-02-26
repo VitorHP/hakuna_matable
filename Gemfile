@@ -14,3 +14,4 @@ gemspec
 # gem 'debugger'
 gem 'rspec-rails'
 gem 'factory_girl_rails'
+gem 'jquery-ui-rails'

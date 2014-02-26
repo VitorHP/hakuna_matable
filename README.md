@@ -19,6 +19,20 @@ Or install it yourself as:
 
 > $ gem install hakuna_matable
 
+In your application.js, include the following line
+
+```javascript
+//= require hakuna_matable/application
+```
+
+and in your application.css, include
+
+```css
+/*
+ *= require hakuna_matable/application
+ */
+```
+
 ## Usage
 
 Say you have a model like
