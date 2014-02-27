@@ -16,7 +16,7 @@ describe "HakunaMatable::TableBuilder" do
 
     it "renders a table for a collection" do
       expect(subject.table_for(products)).to eq <<END
-<table>
+<table class="hakuna_matable">
   <thead>
     <th>id</th>
     <th>name</th>
@@ -46,7 +46,7 @@ END
     context "passing :filter" do
       it "displays only the fields passed" do
         expect(subject.table_for(products, fields: [:name] )).to eq <<END
-<table>
+<table class="hakuna_matable">
   <thead>
     <th>name</th>
   </thead>
