@@ -12,7 +12,9 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+gem 'jquery-rails'
 gem 'rspec-rails'
 gem 'factory_girl_rails'
 gem 'timecop'
 gem 'jquery-ui-rails'
+gem 'pry'

@@ -4,7 +4,7 @@ module HakunaMatable
     module TableHelper
       # this defines a helper to generate a table based on a collection
 
-      def hakuna_matable collection, options = {}
+      def hakuna_matable_for collection, options = {}
         table_builder = options[:builder] ||= HakunaMatable::TableBuilder
 
         table_builder.new.table_for collection, options
