@@ -17,17 +17,25 @@ module HakunaMatable
 
       fields_to_render = field_list(collection.first) if fields_to_render.empty?
 
-      render partial: "hakuna_matable/default_table", locals: { headers: fields_to_render, collection: collection }
+      render partial: "hakuna_matable/default_table", locals: { fields: fields_to_render, collection: collection }
       # content_tag :table do
       #   (header(collection.first, fields_to_render) + body(collection, fields_to_render)).html_safe
       # end
     end
 
-    private
+    def logger
+
+    end
 
     def view_renderer
-      ActionView::Renderer.new ActionView::LookupContext.new(File.expand_path('app/views'))
+      ActionView::Renderer.new lookup_context
     end
+
+    def lookup_context
+      ActionView::LookupContext.new(File.expand_path('app/views'))
+    end
+
+    private
 
     def field_list object
       object.attributes.keys.map(&:to_sym)

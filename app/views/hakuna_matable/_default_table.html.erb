@@ -1,2 +1,16 @@
-
-Tchubas
+<table>
+  <thead>
+  <% fields.each do |h| %>
+    <th><%= h %></th>
+  <% end %>
+  </thead>
+  <tbody>
+  <% collection.each do |item| %>
+    <tr>
+    <% fields.each do |f| %>
+      <td><%= item.send f %></td>
+    <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
