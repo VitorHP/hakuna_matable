@@ -1,6 +1,6 @@
 module HakunaMatable
   class TableBuilder
-    include ActionView::Helpers::TagHelper
+    include ActionView::Helpers::RenderingHelper
 
     attr_accessor :output_buffer
 
@@ -17,12 +17,17 @@ module HakunaMatable
 
       fields_to_render = field_list(collection.first) if fields_to_render.empty?
 
-      content_tag :table do
-        (header(collection.first, fields_to_render) + body(collection, fields_to_render)).html_safe
-      end
+      render partial: "hakuna_matable/default_table", locals: { headers: fields_to_render, collection: collection }
+      # content_tag :table do
+      #   (header(collection.first, fields_to_render) + body(collection, fields_to_render)).html_safe
+      # end
     end
 
     private
+
+    def view_renderer
+      ActionView::Renderer.new ActionView::LookupContext.new(File.expand_path('app/views'))
+    end
 
     def field_list object
       object.attributes.keys.map(&:to_sym)

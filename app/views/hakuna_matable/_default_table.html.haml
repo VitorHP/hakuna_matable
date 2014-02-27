@@ -1,0 +1,11 @@
+
+%table
+  %thead
+    - fields.each do |f|
+      %th= h
+  %tbody
+    - collection.each do |item|
+      %tr
+        - fields.each do |f|
+          %td= item.send f
+
