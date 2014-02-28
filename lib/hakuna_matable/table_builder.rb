@@ -29,7 +29,7 @@ module HakunaMatable
     end
 
     def lookup_context
-      ActionView::LookupContext.new(File.expand_path('app/views'))
+      ActionView::LookupContext.new ActionController::Base.view_paths.map(&:to_path)
     end
 
     private
