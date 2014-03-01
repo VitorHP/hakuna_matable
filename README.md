@@ -25,14 +25,6 @@ In your application.js, include the following line
 //= require hakuna_matable/application
 ```
 
-and in your application.css, include
-
-```css
-/*
- *= require hakuna_matable/application
- */
-```
-
 ## Usage
 
 Say you have a model like
@@ -64,3 +56,4 @@ If you don't want to display all the fields on the table, you can pass a :fields
 
 ```ruby
 = hakuna_matable @products, fields: [:name, :size]
+```

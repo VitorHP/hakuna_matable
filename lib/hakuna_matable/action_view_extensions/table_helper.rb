@@ -7,7 +7,7 @@ module HakunaMatable
       def hakuna_matable_for collection, options = {}
         table_builder = options[:builder] ||= HakunaMatable::TableBuilder
 
-        table_builder.new.table_for collection, options
+        table_builder.new.build_table_for self, collection, options
       end
     end
   end
