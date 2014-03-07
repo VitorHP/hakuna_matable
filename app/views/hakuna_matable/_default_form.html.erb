@@ -1,4 +1,6 @@
-<%= form_for item.class.new do |f| %>
+<%= form_for item.class.new, url: update_multiple_products_path, method: :patch, html: { class: "hakuna-maform" } do |f| %>
+  <%= hidden_field_tag :product_ids %>
+
   <% fields.each do |field| %>
     <%= f.label field %>
     <%= f.text_field field %><br/>

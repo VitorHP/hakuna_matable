@@ -1,5 +1,6 @@
 <table class="hakuna-matable">
   <thead>
+    <th></th>
   <% fields.each do |h| %>
     <th><%= h %></th>
   <% end %>
@@ -7,6 +8,7 @@
   <tbody>
   <% collection.each do |item| %>
     <tr>
+      <td><%= check_box_tag 'product_ids[]', item.id %></td>
     <% fields.each do |f| %>
       <td><%= item.send f %></td>
     <% end %>

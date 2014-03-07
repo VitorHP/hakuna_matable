@@ -30,6 +30,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def update_multiple
+    product_ids = params[:product_ids].split(",")
+
+    ActiveRecord::Base.transaction do
+      product_ids.each do |id|
+        Product.find(id).update_attributes(product_params)
+      end
+    end
+
+    redirect_to products_path
+  end
+
   # PATCH/PUT /products/1
   def update
     if @product.update(product_params)
@@ -53,6 +65,6 @@ class ProductsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def product_params
-      params.require(:product).permit(:name, :description, :size, :price, :expires_at)
+      params.require(:product).permit(:name, :description, :size, :price, :expires_at).select { |key, value| value.present? }
     end
 end
